@@ -1,0 +1,22 @@
+describe('First toolsqa suite', function () {
+    it('First toolsqa test', function () {
+        cy.visit('https://demoqa.com/')
+        cy.get(':nth-child(2) > ul > :nth-child(4) > a').click()
+        cy.get(':nth-child(9) > input').type('rahul')
+        cy.get('#lastname').type('patidar')
+        cy.get('#buttonwithclass').click()
+        cy.get('#sex-0').check().should('be.checked')
+        cy.get('#exp-4').check().should('be.checked')
+        cy.get('#datepicker').type('09/02/2015')
+        cy.get('#profession-0').check().should('be.checked')
+        cy.get('#profession-1').check().should('be.checked')
+        cy.get('#tool-2').check().should('be.checked')
+        cy.get('#continents').select('Asia').should('have.value', 'AS')
+        cy.get('#continentsmultiple > [value="AS"]').click().should('have.value', 'AS')
+        cy.get('#selenium_commands > :nth-child(4)').click().should('have.value', 'Wait Commands')
+        cy.get('#submit2').click()
+        cy.get('#beverages > :nth-child(2)').should('have.value', 0)
+        cy.get('#photo').attachFile('example.json')
+
+    })
+})

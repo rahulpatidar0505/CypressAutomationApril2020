@@ -1,0 +1,16 @@
+describe('Second toolsqa suite',function(){
+    it('Second toolsqs test',function(){
+        cy.visit('https://demoqa.com/controlgroup/')
+        cy.get('#car-type-button').click()
+        cy.get("div ul>li[class='ui-menu-item']").contains('SUV').click()
+        cy.get('[for="transmission-automatic"] > .ui-checkboxradio-icon').click()
+        cy.get('[for="insurance"] > .ui-checkboxradio-icon').click()
+        cy.get('#horizontal-spinner').type(2)
+        cy.get('.ui-corner-right').click()
+        cy.get('#ui-id-8-button').click()
+        cy.get("div ul>li[class='ui-menu-item']").eq(9).click()
+        cy.get('[for="transmission-automatic-v"]').click()
+        cy.get('.controlgroup-vertical > .ui-spinner').type(4)
+        cy.get('#book').click()
+    })
+})

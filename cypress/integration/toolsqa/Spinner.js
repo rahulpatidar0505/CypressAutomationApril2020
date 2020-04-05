@@ -1,0 +1,15 @@
+describe('Second toolsqa suite',function(){
+    it('Second toolsqs test',function(){
+        cy.visit('https://demoqa.com/spinner/')
+        cy.get('#disable').click()
+        cy.get('#spinner').should('not.be.enabled')
+        cy.get('#disable').click()
+        cy.get('#spinner').should('be.enabled')
+        cy.get('.ui-spinner-up > .ui-button-icon').click()
+        cy.get('#setvalue').click()
+        cy.get('#spinner').should('have.value','5')
+        cy.get('.ui-spinner-up > .ui-button-icon').should('be.visible')
+        cy.get('#destroy').click()
+        cy.get('.ui-spinner-up > .ui-button-icon').should('not.be.visible')
+    })
+})
